@@ -10,13 +10,8 @@ AC_DEFUN(AM_MAINTAINER_MODE,
 [  --enable-maintainer-mode enable make rules and dependencies not useful
                           (and sometimes confusing) to the casual installer],
       USE_MAINTAINER_MODE=$enableval,
-      USE_MAINTAINER_MODE=no)
-  AC_MSG_RESULT($USE_MAINTAINER_MODE)
-  if test $USE_MAINTAINER_MODE = yes; then
-    MAINT=
-  else
-    MAINT='#M#'
-  fi
+      USE_MAINTAINER_MODE=yes)
+  MAINT=
   AC_SUBST(MAINT)dnl
 ]
 )
