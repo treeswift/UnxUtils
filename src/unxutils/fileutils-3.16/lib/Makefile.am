@@ -5,7 +5,7 @@ noinst_LIBRARIES = libfu.a
 ## automake is fixed -- probably for 1.1g
 EXTRA_DIST = mkdir.c rmdir.c getline.c mktime.c strftime.c getgroups.c
 
-INCLUDES = -I.. -I$(srcdir) -I../intl
+AM_CPPFLAGS = -I.. -I$(srcdir) -I../intl
 
 libfu_a_SOURCES = getdate.y posixtm.y getopt.c getopt1.c \
 argmatch.c backupfile.c dirname.c filemode.c \

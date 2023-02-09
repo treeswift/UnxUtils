@@ -1,5 +1,5 @@
 ## Process this file with automake to produce Makefile.in
-AUTOMAKE_OPTIONS = ansi2knr
+#AUTOMAKE_OPTIONS = ansi2knr
 
 EXTRAdir = $(bindir)
 EXTRA_PROGRAMS = df mvdir
@@ -15,7 +15,7 @@ localedir = $(datadir)/locale
 noinst_HEADERS = system.h cp.h ls.h dircolors.h
 EXTRA_DIST = cp-aux.c cp-hash.c dcgen.pl dircolors.hin
 
-INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib -I../intl
+AM_CPPFLAGS = -I.. -I$(srcdir) -I$(top_srcdir)/lib -I../intl
 DEFS = -DLOCALEDIR=\"$(localedir)\" -DSHAREDIR=\"$(datadir)\" @DEFS@
 LDADD = @INTLLIBS@ ../lib/libfu.a
 
