@@ -40,7 +40,7 @@ editpl = sed -e 's,@''PERL''@,$(PERL),g'
 CLEANFILES = dcgen
 MAINTAINERCLEANFILES = dircolors.h
 
-dircolors.h: @MAINT@dcgen dircolors.hin
+dircolors.h: dcgen dircolors.hin
 	./dcgen $(srcdir)/dircolors.hin > $@-t
 	mv $@-t $@
 
