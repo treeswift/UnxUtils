@@ -18,3 +18,8 @@ The /src folder contains the source retrieved as follows:
 
 The /web folder contains a shallow copy of the original [UnxUtils](http://unxutils.sourceforge.net/) project webpage.
 
+## Notes on the `treeswift` fork
+
+The fork is primarily intended to be a source archive for porting to less common CPU architectures, such as ARM (WinRT/WoA).
+If you simply want to download the binaries, navigate to the fork origin. Going forward, this copy will only contain human-
+and machine-readable text documents, such as compilable source code and build scripts.
