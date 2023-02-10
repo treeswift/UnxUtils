@@ -21,17 +21,17 @@ cvs-dist: maintainer-check
 	$(MAKE) dist
 
 acdir = m4
-@MAINT@aclocal-files: configure.in
-@MAINT@	echo 'acfiles = \' > $@-tmp
-@MAINT@	find $(acdir) -type f -name '*.m4' -print		\
-@MAINT@	  | sed 's!^!$(top_srcdir)/!'				\
-@MAINT@	  | tr '\012' ' '					\
-@MAINT@	  >> $@-tmp
-@MAINT@	echo >> $@-tmp
-@MAINT@	mv $@-tmp $@
+aclocal-files: configure.in
+	echo 'acfiles = \' > $@-tmp
+	find $(acdir) -type f -name '*.m4' -print		\
+	  | sed 's!^!$(top_srcdir)/!'				\
+	  | tr '\012' ' '					\
+	  >> $@-tmp
+	echo >> $@-tmp
+	mv $@-tmp $@
 
-@MAINT@include aclocal-files
+include aclocal-files
 
-@MAINT@# Override default rule to use --acdir option
-@MAINT@$(srcdir)/aclocal.m4: configure.in $(acfiles)
-@MAINT@	cd $(srcdir) && aclocal --acdir=$(acdir)
+# Override default rule to use --acdir option
+$(srcdir)/aclocal.m4: configure.in $(acfiles)
+	cd $(srcdir) && aclocal --acdir=$(acdir)
